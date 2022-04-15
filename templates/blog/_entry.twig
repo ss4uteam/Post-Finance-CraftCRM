@@ -1,0 +1,13 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <h1 class="text-4xl text-black font-display my-4">I’m a blog post!</h1>
+
+    <time class="text-sm block pb-4" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
+
+    {% if entry.featureImage|length %}
+        {% for image in entry.featureImage.all() %}
+            <img src="{{ image.url }}" alt="{{ image.title }}" />
+        {% endfor %}
+    {% endif %}
+{% endblock %}
