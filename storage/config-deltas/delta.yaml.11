@@ -1,0 +1,19 @@
+dateApplied: '2022-04-25 05:21:01'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650888542
+        to: 1650889260
+  -
+    changed:
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.enforce3dSecure:
+        from: null
+        to: ''
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.sendReceiptEmail:
+        from: 1
+        to: '1'
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.signingSecret:
+        from: null
+        to: 'POST /webhooks invoice.paid'

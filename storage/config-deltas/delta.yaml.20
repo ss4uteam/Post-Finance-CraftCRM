@@ -1,0 +1,19 @@
+dateApplied: '2022-04-25 03:20:12'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650881047
+        to: 1650882012
+  -
+    added:
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.apiKey: ''
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.enforce3dSecure: ''
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.publishableKey: ''
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.sendReceiptEmail: '1'
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.settings.signingSecret: ''
+    changed:
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.type:
+        from: craft\commerce\gateways\Dummy
+        to: craft\commerce\stripe\gateways\Gateway

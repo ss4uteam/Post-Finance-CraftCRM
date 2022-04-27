@@ -1,0 +1,14 @@
+dateApplied: '2022-04-21 06:47:51'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650547282
+        to: 1650548871
+  -
+    added:
+      plugins.commerce-stripe.edition: standard
+      plugins.commerce-stripe.enabled: true
+      plugins.commerce-stripe.schemaVersion: 2.4.1
+    message: 'Install plugin “commerce-stripe”'

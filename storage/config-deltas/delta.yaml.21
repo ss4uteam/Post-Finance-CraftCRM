@@ -1,0 +1,46 @@
+dateApplied: '2022-04-25 03:04:07'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650881023
+        to: 1650881047
+  -
+    added:
+      plugins.commerce.settings._orderPdfPath: null
+      plugins.commerce.settings.activeCartDuration: 3600
+      plugins.commerce.settings.allowCheckoutWithoutPayment: false
+      plugins.commerce.settings.allowEmptyCartOnCheckout: false
+      plugins.commerce.settings.allowPartialPaymentOnCheckout: false
+      plugins.commerce.settings.autoSetCartShippingMethodOption: false
+      plugins.commerce.settings.autoSetNewCartAddresses: true
+      plugins.commerce.settings.cartVariable: cart
+      plugins.commerce.settings.defaultView: commerce/orders
+      plugins.commerce.settings.dimensionUnits: mm
+      plugins.commerce.settings.emailSenderAddress: ''
+      plugins.commerce.settings.emailSenderAddressPlaceholder: null
+      plugins.commerce.settings.emailSenderName: ''
+      plugins.commerce.settings.emailSenderNamePlaceholder: null
+      plugins.commerce.settings.freeOrderPaymentStrategy: complete
+      plugins.commerce.settings.gatewayPostRedirectTemplate: ''
+      plugins.commerce.settings.loadCartRedirectUrl: null
+      plugins.commerce.settings.minimumTotalPriceStrategy: default
+      plugins.commerce.settings.orderReferenceFormat: '{{number[:7]}}'
+      plugins.commerce.settings.paymentCurrency: null
+      plugins.commerce.settings.pdfAllowRemoteImages: false
+      plugins.commerce.settings.pdfPaperOrientation: portrait
+      plugins.commerce.settings.pdfPaperSize: letter
+      plugins.commerce.settings.purgeInactiveCarts: true
+      plugins.commerce.settings.purgeInactiveCartsDuration: 7776000
+      plugins.commerce.settings.requireBillingAddressAtCheckout: false
+      plugins.commerce.settings.requireShippingAddressAtCheckout: false
+      plugins.commerce.settings.requireShippingMethodSelectionAtCheckout: false
+      plugins.commerce.settings.showCustomerInfoTab: true
+      plugins.commerce.settings.updateBillingDetailsUrl: ''
+      plugins.commerce.settings.updateCartSearchIndexes: true
+      plugins.commerce.settings.useBillingAddressForTax: false
+      plugins.commerce.settings.validateBusinessTaxIdAsVatId: false
+      plugins.commerce.settings.validateCartCustomFieldsOnSubmission: false
+      plugins.commerce.settings.weightUnits: g
+    message: 'Change settings for plugin “commerce”'

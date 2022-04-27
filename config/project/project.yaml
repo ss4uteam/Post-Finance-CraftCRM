@@ -1,0 +1,83 @@
+dateModified: 1650974190
+email:
+  fromEmail: yamuna@softsolutions4u.info
+  fromName: craftcms
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    4e782d9e-5d77-4515-8ee5-d1da8cb2c12f: Home # Home
+    8c48a965-cfaf-448e-932e-b68f8320f814: craftcms # craftcms
+    9dd87955-1c19-4113-a623-dc57e1a1c413: Clothing # Clothing
+    0286d5e7-a824-4cf3-9e42-145f0c097d52: Common # Common
+    84610e62-a581-42a0-a2ca-0d6aaf8b984a: Stripe # Stripe
+    3075747e-c7d8-42b4-8dec-789d10c9a7e9: craftcms # craftcms
+    a2c713e1-f413-4aed-9848-3e4ecaeae3cd: New # New
+    ead398cf-5e4d-4d49-bef9-d0954b221daa: Home # Home
+plugins:
+  commerce:
+    edition: lite
+    enabled: true
+    licenseKey: JYE604VUXX0YAFO5KY3UMGTX
+    schemaVersion: 3.4.13
+    settings:
+      _orderPdfPath: null
+      activeCartDuration: 3600
+      allowCheckoutWithoutPayment: false
+      allowEmptyCartOnCheckout: false
+      allowPartialPaymentOnCheckout: false
+      autoSetCartShippingMethodOption: false
+      autoSetNewCartAddresses: true
+      cartVariable: cart
+      defaultView: commerce/orders
+      dimensionUnits: mm
+      emailSenderAddress: yamunaprasath@softsolutions4u.info
+      emailSenderAddressPlaceholder: null
+      emailSenderName: ''
+      emailSenderNamePlaceholder: null
+      freeOrderPaymentStrategy: complete
+      gatewayPostRedirectTemplate: ''
+      loadCartRedirectUrl: null
+      minimumTotalPriceStrategy: default
+      orderReferenceFormat: '{{number[:7]}}'
+      paymentCurrency: null
+      pdfAllowRemoteImages: false
+      pdfPaperOrientation: portrait
+      pdfPaperSize: letter
+      purgeInactiveCarts: true
+      purgeInactiveCartsDuration: 7776000
+      requireBillingAddressAtCheckout: false
+      requireShippingAddressAtCheckout: false
+      requireShippingMethodSelectionAtCheckout: false
+      showCustomerInfoTab: true
+      updateBillingDetailsUrl: ''
+      updateCartSearchIndexes: true
+      useBillingAddressForTax: false
+      validateBusinessTaxIdAsVatId: false
+      validateCartCustomFieldsOnSubmission: false
+      weightUnits: g
+  commerce-stripe:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.4.1
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.4.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: solo
+  live: true
+  name: craftcms
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  fieldLayouts:
+    b2af7765-4a9a-42b9-bab8-cb77eb2b8cf9: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

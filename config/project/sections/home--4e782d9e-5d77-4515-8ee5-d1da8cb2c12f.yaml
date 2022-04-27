@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: home
+name: Home
+propagationMethod: all
+siteSettings:
+  8c48a965-cfaf-448e-932e-b68f8320f814: # craftcms
+    enabledByDefault: true
+    hasUrls: true
+    template: home/_entry
+    uriFormat: home
+type: single

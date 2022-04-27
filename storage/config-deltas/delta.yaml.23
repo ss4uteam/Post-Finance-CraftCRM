@@ -1,0 +1,54 @@
+dateApplied: '2022-04-25 02:55:02'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650630920
+        to: 1650880462
+  -
+    added:
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.color: green
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.default: true
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.description: null
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.handle: new
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.name: New
+      commerce.orderStatuses.a2c713e1-f413-4aed-9848-3e4ecaeae3cd.sortOrder: 99
+  -
+    added:
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.descriptionFormat: ''
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.handle: clothing
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.hasDimensions: true
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.hasProductTitleField: true
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.hasVariantTitleField: true
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.hasVariants: false
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.name: Clothing
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.productTitleFormat: ''
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.siteSettings.8c48a965-cfaf-448e-932e-b68f8320f814.hasUrls: true
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.siteSettings.8c48a965-cfaf-448e-932e-b68f8320f814.template: shop/products/_product
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.siteSettings.8c48a965-cfaf-448e-932e-b68f8320f814.uriFormat: 'shop/products/{slug}'
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.skuFormat: ''
+      commerce.productTypes.9dd87955-1c19-4113-a623-dc57e1a1c413.titleFormat: '{product.title}'
+  -
+    added:
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.handle: dummy
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.isFrontendEnabled: true
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.name: Dummy
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.paymentType: purchase
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.sortOrder: 99
+      commerce.gateways.84610e62-a581-42a0-a2ca-0d6aaf8b984a.type: craft\commerce\gateways\Dummy
+  -
+    added:
+      plugins.commerce.edition: lite
+      plugins.commerce.enabled: true
+      plugins.commerce.schemaVersion: 3.4.13
+    message: 'Install plugin “commerce”'
+  -
+    added:
+      meta.__names__.a2c713e1-f413-4aed-9848-3e4ecaeae3cd: New
+  -
+    added:
+      meta.__names__.9dd87955-1c19-4113-a623-dc57e1a1c413: Clothing
+  -
+    added:
+      meta.__names__.84610e62-a581-42a0-a2ca-0d6aaf8b984a: Dummy

@@ -1,0 +1,23 @@
+dateApplied: '2022-04-25 04:48:55'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650887282
+        to: 1650887335
+  -
+    message: 'Change settings for plugin “commerce”'
+    changed:
+      plugins.commerce.settings.emailSenderAddress:
+        from: null
+        to: yamunaprasath@softsolutions4u.info
+      plugins.commerce.settings.emailSenderName:
+        from: null
+        to: ''
+      plugins.commerce.settings.gatewayPostRedirectTemplate:
+        from: null
+        to: ''
+      plugins.commerce.settings.updateBillingDetailsUrl:
+        from: null
+        to: ''

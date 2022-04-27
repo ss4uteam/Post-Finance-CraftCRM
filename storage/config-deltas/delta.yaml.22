@@ -1,0 +1,12 @@
+dateApplied: '2022-04-25 03:03:44'
+changes:
+  -
+    message: 'Update timestamp for project config'
+    changed:
+      dateModified:
+        from: 1650880462
+        to: 1650881023
+  -
+    added:
+      plugins.commerce.licenseKey: JYE604VUXX0YAFO5KY3UMGTX
+    message: 'Set license key for plugin “commerce”'
