@@ -11,9 +11,11 @@ use craft\commerce\errors\PaymentException;
 use craft\commerce\helpers\Currency;
 use craft\commerce\models\Address;
 use craft\commerce\models\payments\BasePaymentForm;
+use craft\commerce\postfinance\models\PaymentPage;
 use craft\commerce\models\payments\OffsitePaymentForm;
 use craft\commerce\models\PaymentSource;
 use craft\commerce\models\Transaction;
+use craft\commerce\postfinance\responses\PostfinanceResponse;
 use craft\commerce\paypalcheckout\PayPalCheckoutBundle;
 use craft\commerce\paypalcheckout\responses\CheckoutResponse;
 use craft\commerce\paypalcheckout\responses\RefundResponse;
@@ -27,6 +29,23 @@ use craft\web\View;
 
 class Gateway extends BaseGateway
 {
+
+    /**
+     * @var string
+     */
+    public $spaceId;
+
+    /**
+     * @var string
+     */
+    public $userId;
+
+    /**
+     * @var string
+     */
+    public $secretKey;
+
+
     public static function displayName(): string
     {
         return Craft::t('commerce-postfinance', 'PostFinance Checkout');
@@ -34,6 +53,12 @@ class Gateway extends BaseGateway
 
     public function getPaymentFormHtml(array $params)
     {
+        
+        $params = [
+            'gateway' => $this,
+            'paymentForm' => $this->getPaymentFormModel(),
+        ];
+
         $view = Craft::$app->getView();
 
         $previousMode = $view->getTemplateMode();
@@ -47,47 +72,47 @@ class Gateway extends BaseGateway
 
     public function getSettingsHtml()
     {
-        return Craft::$app->getView()->renderTemplate('commerce-postfinance/chargeSettings', ['gateway' => $this]);
+        return Craft::$app->getView()->renderTemplate('commerce-postfinance/settings', ['gateway' => $this]);
     }
 
     public function completePurchase(Transaction $transaction): RequestResponseInterface
     {
-        return $response;
+        // To do
     }
 
     public function capture(Transaction $transaction, string $reference): RequestResponseInterface
     {
-      return $request;
+        // To do
     }
 
     public function createPaymentSource(BasePaymentForm $sourceData, int $userId): PaymentSource
     {
-        return new PaymentSource(['userId' => $userId]);
+        // To do
     }
 
     public function deletePaymentSource($token): bool
     {
-        return true;
+        // To do
     }
 
     public function getPaymentFormModel(): BasePaymentForm
     {
-        return new PaymentForm();
+        return new PaymentPage;
     }
 
     public function refund(Transaction $transaction): RequestResponseInterface
     {
-        return true;
+        // To do
     }
 
     public function authorize(Transaction $transaction, BasePaymentForm $form): RequestResponseInterface
     {
-        return $source;
+        // To do
     }
 
     public function completeAuthorize(Transaction $transaction): RequestResponseInterface
     {
-        return true;
+        // To do
     }
 
     /**
@@ -95,7 +120,32 @@ class Gateway extends BaseGateway
      */
     public function purchase(Transaction $transaction, BasePaymentForm $form): RequestResponseInterface
     {   
-        return true;
+        // Setup API client
+        $client = new \PostFinanceCheckout\Sdk\ApiClient($this->userId, $this->secretKey);
+
+        // Create transaction
+        $lineItem = new \PostFinanceCheckout\Sdk\Model\LineItemCreate();
+        $lineItem->setName('Red T-Shirt');
+        $lineItem->setUniqueId('5412');
+        $lineItem->setSku('red-t-shirt-123');
+        $lineItem->setQuantity(1);
+        $lineItem->setAmountIncludingTax($transaction->paymentAmount);
+        $lineItem->setType(\PostFinanceCheckout\Sdk\Model\LineItemType::PRODUCT);
+        
+        
+        $transactionPayload = new \PostFinanceCheckout\Sdk\Model\TransactionCreate();
+        $transactionPayload->setCurrency($transaction->paymentCurrency);
+        $transactionPayload->setLineItems(array($lineItem));
+        $transactionPayload->setAutoConfirmationEnabled(true);
+
+        $transaction = $client->getTransactionService()->create($this->spaceId, $transactionPayload);
+        
+        // Create Payment Page URL:
+        $redirectionUrl = $client->getTransactionPaymentPageService()->paymentPageUrl($this->spaceId, $transaction->getId());
+        $response = new PostfinanceResponse();
+
+        $response->setRedirectUrl($redirectionUrl);
+        return $response;
     }
 
     /**
@@ -103,7 +153,7 @@ class Gateway extends BaseGateway
      */
     public function processWebHook(): WebResponse
     {
-        return $webResponse;
+        // To do
     }
 
     /**
@@ -111,7 +161,7 @@ class Gateway extends BaseGateway
      */
     public function supportsCapture(): bool
     {
-        return true;
+        // To do
     }
 
     /**
@@ -119,7 +169,7 @@ class Gateway extends BaseGateway
      */
     public function supportsAuthorize(): bool
     {
-        return true;
+        // To do
     }
 
     /**
@@ -127,7 +177,7 @@ class Gateway extends BaseGateway
      */
     public function supportsCompleteAuthorize(): bool
     {
-        return true;
+        // To do
     }
 
     /**
@@ -135,7 +185,7 @@ class Gateway extends BaseGateway
      */
     public function supportsCompletePurchase(): bool
     {
-        return true;
+        // To do
     }
 
     /**
@@ -159,7 +209,7 @@ class Gateway extends BaseGateway
      */
     public function supportsRefund(): bool
     {
-        return true;
+        // To do
     }
 
     /**
@@ -167,7 +217,7 @@ class Gateway extends BaseGateway
      */
     public function supportsPartialRefund(): bool
     {
-        return true;
+        // To do
     }
 
     /**
